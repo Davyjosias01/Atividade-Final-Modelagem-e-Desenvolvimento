@@ -5,7 +5,16 @@
 package com.mycompany.projetofinal;
 
 public class Sindico extends Usuario{
+
+    public Sindico(String email, String senha) {
+        super(email, senha);
+    }
+
+    public Sindico() {
+    }
     
-    
+    public String cadastrarDispositivo(String dispositivo){
+        return dispositivo;
+    }
     
 }

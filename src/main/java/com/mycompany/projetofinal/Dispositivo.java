@@ -4,10 +4,7 @@
  */
 package com.mycompany.projetofinal;
 
-/**
- *
- * @author davyj
- */
+
 public class Dispositivo {
     
 }
