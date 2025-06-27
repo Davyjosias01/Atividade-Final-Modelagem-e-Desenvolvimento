@@ -14,6 +14,7 @@ public class Dispositivo {
     private String tipo;
     private String moradia;
     private List<Consumo> historicoConsumo;
+    private float mediaHistoricoDeConsumo;
 
     public int getId() {
         return id;
@@ -56,7 +57,7 @@ public class Dispositivo {
     public void setHistoricoConsumo(List<Consumo> historicoConsumo) {
         this.historicoConsumo = historicoConsumo;
     }
-
+    
     public Dispositivo(int id, String nome, String modelo, String tipo, String moradia, List<Consumo> historicoConsumo) {
         this.id = id;
         this.nome = nome;
@@ -68,9 +69,12 @@ public class Dispositivo {
     
     public Dispositivo(){}
     
-    public registrarConsumo(Consumo consumo){
-        
+    public void registrarConsumo(Consumo consumo){
+        historicoConsumo.add(consumo);
+        mediaHistoricoDeConsumo = ((mediaHistoricoDeConsumo+consumo.getValor())/2);
     }
     
-    
+    public Consumo getConsumoAtual(){
+        return historicoConsumo.getFirst();
+    }
 }
