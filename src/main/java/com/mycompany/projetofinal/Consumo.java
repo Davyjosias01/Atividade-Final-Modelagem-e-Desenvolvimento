@@ -1,24 +1,23 @@
 package com.mycompany.projetofinal;
 
+
+import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Date;
 
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
 public class Consumo {
-    //ATRIBUTOS
-    private Date dataHora;
+    private Time dataHora;
     private float valor;
 
-    //CONSTRUTORES
-    public Consumo(Date dataHora, float valor) {
-        this.dataHora = dataHora;
-        this.valor = valor;
-    }
-    public Consumo(){}
-
-    //GETTERS E SETTERS
     public Date getDataHora() {
         return dataHora;
     }
-    public void setDataHora(Date dataHora) {
+    public void setDataHora(Time dataHora) {
         this.dataHora = dataHora;
     }
     public float getValor() {
@@ -28,6 +27,17 @@ public class Consumo {
         this.valor = valor;
     }
 
-    //MÉTODOS
+    public Consumo(Time dataHora, float valor) {
+        this.dataHora = dataHora;
+        this.valor = valor;
+    }
 
+    //Consumo sendo instanciado sem passar hora por parâmetro, recebe hora atual
+    public Consumo(float valor) {
+        this.valor = valor;
+        this.dataHora = Time.valueOf(LocalTime.now());
+    }
+
+    public Consumo() {}
+    
 }

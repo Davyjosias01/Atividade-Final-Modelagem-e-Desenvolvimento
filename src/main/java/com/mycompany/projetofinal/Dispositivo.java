@@ -1,11 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.projetofinal;
 
 import java.util.List;
-
 
 public class Dispositivo {
     private int id;
@@ -16,6 +11,7 @@ public class Dispositivo {
     private List<Consumo> historicoConsumo;
     private float mediaHistoricoDeConsumo;
 
+    //GETTERS N SETTERS
     public int getId() {
         return id;
     }
@@ -58,6 +54,8 @@ public class Dispositivo {
         this.historicoConsumo = historicoConsumo;
     }
     
+    
+    //CONSTRUTORES
     public Dispositivo(int id, String nome, String modelo, String tipo, String moradia, List<Consumo> historicoConsumo) {
         this.id = id;
         this.nome = nome;
@@ -66,9 +64,10 @@ public class Dispositivo {
         this.moradia = moradia;
         this.historicoConsumo = historicoConsumo;
     }
-    
     public Dispositivo(){}
     
+    
+    //METODOS
     public void registrarConsumo(Consumo consumo){
         historicoConsumo.add(consumo);
         mediaHistoricoDeConsumo = ((mediaHistoricoDeConsumo+consumo.getValor())/2);

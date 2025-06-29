@@ -13,7 +13,7 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
-    private UUID id;
+        private UUID id;
     List<String> listaUsuarios = new ArrayList<>();
 
     //Construtores
@@ -23,6 +23,7 @@ public class Usuario {
         this.senha = senha;
         this.nome = nome;
     }
+
     public Usuario() {}
 
     //GETTERS E SETTERS
