@@ -1,5 +1,6 @@
 package com.mycompany.projetofinal;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Dispositivo {
@@ -8,13 +9,22 @@ public class Dispositivo {
     private String modelo;
     private String tipo;
     private String moradia;
-    private List<Consumo> historicoConsumo;
+    private List<Consumo> historicoConsumo = new ArrayList<>();
     private float mediaHistoricoDeConsumo;
 
-    //GETTERS N SETTERS
+    public Dispositivo(int id, String nome, String modelo, String tipo) {
+        this.id = id;
+        this.nome = nome;
+        this.modelo = modelo;
+        this.tipo = tipo;
+    }
+
+    public Dispositivo() {}
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -22,6 +32,7 @@ public class Dispositivo {
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -29,6 +40,7 @@ public class Dispositivo {
     public String getModelo() {
         return modelo;
     }
+
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
@@ -36,6 +48,7 @@ public class Dispositivo {
     public String getTipo() {
         return tipo;
     }
+
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
@@ -43,6 +56,7 @@ public class Dispositivo {
     public String getMoradia() {
         return moradia;
     }
+
     public void setMoradia(String moradia) {
         this.moradia = moradia;
     }
@@ -50,30 +64,27 @@ public class Dispositivo {
     public List<Consumo> getHistoricoConsumo() {
         return historicoConsumo;
     }
-    public void setHistoricoConsumo(List<Consumo> historicoConsumo) {
-        this.historicoConsumo = historicoConsumo;
+
+    public float getMediaHistoricoDeConsumo() {
+        return mediaHistoricoDeConsumo;
     }
-    
-    
-    //CONSTRUTORES
-    public Dispositivo(int id, String nome, String modelo, String tipo, String moradia, List<Consumo> historicoConsumo) {
-        this.id = id;
-        this.nome = nome;
-        this.modelo = modelo;
-        this.tipo = tipo;
-        this.moradia = moradia;
-        this.historicoConsumo = historicoConsumo;
-    }
-    public Dispositivo(){}
-    
-    
-    //METODOS
-    public void registrarConsumo(Consumo consumo){
+
+    public void registrarConsumo(Consumo consumo) {
         historicoConsumo.add(consumo);
-        mediaHistoricoDeConsumo = ((mediaHistoricoDeConsumo+consumo.getValor())/2);
+        float soma = 0;
+        for (Consumo c : historicoConsumo) {
+            soma += c.getValor();
+        }
+        mediaHistoricoDeConsumo = soma / historicoConsumo.size();
     }
-    
-    public Consumo getConsumoAtual(){
-        return historicoConsumo.getFirst();
+
+    public Consumo getConsumoAtual() {
+        if (historicoConsumo == null || historicoConsumo.isEmpty()) return null;
+        return historicoConsumo.get(historicoConsumo.size() - 1);
+    }
+
+    @Override
+    public String toString() {
+        return "Dispositivo {id=" + id + ", nome='" + nome + "', modelo='" + modelo + "', tipo='" + tipo + "'}";
     }
 }

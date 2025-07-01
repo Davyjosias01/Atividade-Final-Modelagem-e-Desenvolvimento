@@ -3,31 +3,24 @@ package com.mycompany.projetofinal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Morador extends Usuario{
-    //ATRIBUTOS
-    private List<Alerta> alerta;
-    
-    //CONSTRUTORES
-    public Morador (String nome, String email, String senha, List<Alerta> alertas){
+public class Morador extends Usuario {
+    private List<Alerta> alertas = new ArrayList<>();
+
+    public Morador(String nome, String email, String senha) {
         super(nome, email, senha);
-        this.alerta = alertas;
     }
-    public Morador(){}
-    
-    //DUAS FUNÇÕES COM ASSINATURAS DIFERENTES
-    public void defineAlerta(Float limite, String tipo){
-        Alerta a = new Alerta(limite, tipo);
-        alerta.add(a);
+
+    public Morador() {}
+
+    public void defineAlerta(float limite, String tipo) {
+        alertas.add(new Alerta(limite, tipo));
     }
-    public void defineAlerta(Alerta a){
-        alerta.add(a);
+
+    public List<Alerta> getAlertas() {
+        return alertas;
     }
-    
-    public List<Consumo> visualizaConsumo(Dispositivo dispositivo){
-        return dispositivo.getHistoricoConsumo();
-    }
-    
-    public void receberNotificacao(String mensagem){
-        System.out.println(mensagem);
+
+    public void receberNotificacao(String mensagem) {
+        System.out.println("[Alerta] " + mensagem);
     }
 }
