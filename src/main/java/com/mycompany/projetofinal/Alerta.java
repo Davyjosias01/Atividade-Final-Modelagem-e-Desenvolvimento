@@ -1,9 +1,11 @@
 package com.mycompany.projetofinal;
 
 public class Alerta {
+    //ATRIBUTOS
     private float limite;
     private String tipo;
 
+    //CONSTRUTORES
     public Alerta() {}
 
     public Alerta(float limite, String tipo) {
@@ -11,6 +13,7 @@ public class Alerta {
         this.tipo = tipo;
     }
 
+    //GETTERS E SETTERS
     public float getLimite() {
         return limite;
     }
@@ -27,6 +30,7 @@ public class Alerta {
         this.tipo = tipo;
     }
 
+    //MÉTODOS
     public boolean alertaExcedido(float consumoAtual) {
         return consumoAtual > limite;
     }

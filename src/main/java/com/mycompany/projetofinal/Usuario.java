@@ -3,11 +3,13 @@ package com.mycompany.projetofinal;
 import java.util.UUID;
 
 public class Usuario {
+    //ATRIBUTOS
     private String nome;
     private String email;
     private String senha;
     private UUID id;
 
+    //CONSTRUTORES
     public Usuario(String nome, String email, String senha) {
         this.id = UUID.randomUUID();
         this.nome = nome;
@@ -19,6 +21,7 @@ public class Usuario {
         this.id = UUID.randomUUID();
     }
 
+    //GETTERS E SETTERS
     public String getEmail() {
         return email;
     }
@@ -43,6 +46,7 @@ public class Usuario {
         this.nome = nome;
     }
 
+    //MÉTODOS
     public void visualizarInformacoes() {
         System.out.println("Id: " + this.id);
         System.out.println("Nome: " + this.nome);

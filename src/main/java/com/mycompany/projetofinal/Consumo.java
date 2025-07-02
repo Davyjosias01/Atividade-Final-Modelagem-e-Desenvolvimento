@@ -3,23 +3,24 @@ package com.mycompany.projetofinal;
 import java.time.LocalDateTime;
 
 public class Consumo {
+    //ATRIBUTOS
     private LocalDateTime dataHora;
     private float valor;
 
-    public Consumo() {
-        this.dataHora = LocalDateTime.now();
-    }
-
+    //CONSTRUTORES
     public Consumo(float valor) {
         this.valor = valor;
         this.dataHora = LocalDateTime.now();
     }
+
+    public Consumo() {}
 
     public Consumo(LocalDateTime dataHora, float valor) {
         this.dataHora = dataHora;
         this.valor = valor;
     }
 
+    //GETTERS E SETTERS
     public LocalDateTime getDataHora() {
         return dataHora;
     }

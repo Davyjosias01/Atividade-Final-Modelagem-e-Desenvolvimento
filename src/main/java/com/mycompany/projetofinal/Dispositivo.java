@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Dispositivo {
+    //ATRIBUTOS
     private int id;
     private String nome;
     private String modelo;
@@ -12,6 +13,7 @@ public class Dispositivo {
     private List<Consumo> historicoConsumo = new ArrayList<>();
     private float mediaHistoricoDeConsumo;
 
+    //CONSTRUTORES
     public Dispositivo() {}
 
     public Dispositivo(int id, String nome, String modelo, String tipo) {
@@ -21,6 +23,7 @@ public class Dispositivo {
         this.tipo = tipo;
     }
 
+    //GETTERS E SETTERS
     public int getId() {
         return id;
     }
@@ -69,16 +72,17 @@ public class Dispositivo {
         return mediaHistoricoDeConsumo;
     }
 
+    public Consumo getConsumoAtual() {
+        if (historicoConsumo.isEmpty()) return null;
+        return historicoConsumo.get(historicoConsumo.size() - 1);
+    }
+
+    //MÉTODOS
     public void registrarConsumo(Consumo consumo) {
         historicoConsumo.add(consumo);
         float soma = 0;
         for (Consumo c : historicoConsumo) soma += c.getValor();
         mediaHistoricoDeConsumo = soma / historicoConsumo.size();
-    }
-
-    public Consumo getConsumoAtual() {
-        if (historicoConsumo.isEmpty()) return null;
-        return historicoConsumo.get(historicoConsumo.size() - 1);
     }
 
     @Override

@@ -5,16 +5,25 @@ import java.util.List;
 import java.util.UUID;
 
 public class Moradia {
+    //ATRIBUTOS
     private UUID id;
     private int numero;
     private String bloco;
     private List<Morador> moradores = new ArrayList<>();
     private List<Dispositivo> dispositivos = new ArrayList<>();
 
+    //CONSTRUTORES
     public Moradia() {
         this.id = UUID.randomUUID();
     }
 
+    public Moradia(UUID id, int numero, String bloco){
+        this.id = id;
+        this.numero = numero;
+        this.bloco = bloco;
+    }
+
+    //GETTERS E SETTERS
     public UUID getId() {
         return id;
     }
@@ -39,6 +48,7 @@ public class Moradia {
         return moradores;
     }
 
+    //MÉTODOS
     public void addMorador(Morador morador) {
         morador.setMoradia(this);
         moradores.add(morador);

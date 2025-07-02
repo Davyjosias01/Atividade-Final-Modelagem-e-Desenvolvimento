@@ -4,25 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Morador extends Usuario {
+    //MÉTODOS
     private List<Alerta> alertas = new ArrayList<>();
     private Moradia moradia;
 
+    //CONSTRUTORES
     public Morador(String nome, String email, String senha) {
         super(nome, email, senha);
     }
 
     public Morador() {}
 
-    public void defineAlerta(float limite, String tipo) {
-        alertas.add(new Alerta(limite, tipo));
-    }
-
+    //GETTERS E SETTERS
     public List<Alerta> getAlertas() {
         return alertas;
-    }
-
-    public void receberNotificacao(String mensagem) {
-        System.out.println("[Alerta] " + mensagem);
     }
 
     public Moradia getMoradia() {
@@ -31,5 +26,14 @@ public class Morador extends Usuario {
 
     public void setMoradia(Moradia moradia) {
         this.moradia = moradia;
+    }
+
+    //MÉTODOS
+    public void defineAlerta(float limite, String tipo) {
+        alertas.add(new Alerta(limite, tipo));
+    }
+
+    public void receberNotificacao(String mensagem) {
+        System.out.println("[Alerta] " + mensagem);
     }
 }

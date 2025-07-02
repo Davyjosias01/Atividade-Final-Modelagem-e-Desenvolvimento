@@ -6,12 +6,16 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class SistemaMonitoramento {
-
+    //ATRIBUTOS
     private List<Morador> moradores = new ArrayList<>();
     private List<Dispositivo> dispositivos = new ArrayList<>();
     private List<Moradia> moradias = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
 
+    //CONSTRUTORES
+    public SistemaMonitoramento(){}
+
+    //MÉTODOS
     public void registrarDispositivo() {
         System.out.print("ID: ");
         int id = scanner.nextInt(); scanner.nextLine();
@@ -219,7 +223,7 @@ public class SistemaMonitoramento {
         return null;
     }
 
-    // Getters (se necessário)
+    // Getters
     public List<Dispositivo> getDispositivos() { return dispositivos; }
     public List<Morador> getMoradores() { return moradores; }
     public List<Moradia> getMoradias() { return moradias; }
