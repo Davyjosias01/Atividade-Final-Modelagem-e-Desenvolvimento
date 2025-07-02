@@ -6,9 +6,8 @@ public class Consumo {
     private LocalDateTime dataHora;
     private float valor;
 
-    public Consumo(LocalDateTime dataHora, float valor) {
-        this.dataHora = dataHora;
-        this.valor = valor;
+    public Consumo() {
+        this.dataHora = LocalDateTime.now();
     }
 
     public Consumo(float valor) {
@@ -16,8 +15,9 @@ public class Consumo {
         this.dataHora = LocalDateTime.now();
     }
 
-    public Consumo() {
-        this.dataHora = LocalDateTime.now();
+    public Consumo(LocalDateTime dataHora, float valor) {
+        this.dataHora = dataHora;
+        this.valor = valor;
     }
 
     public LocalDateTime getDataHora() {

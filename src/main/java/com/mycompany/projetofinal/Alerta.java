@@ -4,12 +4,12 @@ public class Alerta {
     private float limite;
     private String tipo;
 
+    public Alerta() {}
+
     public Alerta(float limite, String tipo) {
         this.limite = limite;
         this.tipo = tipo;
     }
-
-    public Alerta() {}
 
     public float getLimite() {
         return limite;

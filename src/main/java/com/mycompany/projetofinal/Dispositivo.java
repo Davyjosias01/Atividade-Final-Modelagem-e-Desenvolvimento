@@ -8,9 +8,11 @@ public class Dispositivo {
     private String nome;
     private String modelo;
     private String tipo;
-    private String moradia;
+    private Moradia moradia;
     private List<Consumo> historicoConsumo = new ArrayList<>();
     private float mediaHistoricoDeConsumo;
+
+    public Dispositivo() {}
 
     public Dispositivo(int id, String nome, String modelo, String tipo) {
         this.id = id;
@@ -18,8 +20,6 @@ public class Dispositivo {
         this.modelo = modelo;
         this.tipo = tipo;
     }
-
-    public Dispositivo() {}
 
     public int getId() {
         return id;
@@ -53,11 +53,11 @@ public class Dispositivo {
         this.tipo = tipo;
     }
 
-    public String getMoradia() {
+    public Moradia getMoradia() {
         return moradia;
     }
 
-    public void setMoradia(String moradia) {
+    public void setMoradia(Moradia moradia) {
         this.moradia = moradia;
     }
 
@@ -72,14 +72,12 @@ public class Dispositivo {
     public void registrarConsumo(Consumo consumo) {
         historicoConsumo.add(consumo);
         float soma = 0;
-        for (Consumo c : historicoConsumo) {
-            soma += c.getValor();
-        }
+        for (Consumo c : historicoConsumo) soma += c.getValor();
         mediaHistoricoDeConsumo = soma / historicoConsumo.size();
     }
 
     public Consumo getConsumoAtual() {
-        if (historicoConsumo == null || historicoConsumo.isEmpty()) return null;
+        if (historicoConsumo.isEmpty()) return null;
         return historicoConsumo.get(historicoConsumo.size() - 1);
     }
 

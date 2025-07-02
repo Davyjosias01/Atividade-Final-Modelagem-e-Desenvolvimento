@@ -9,7 +9,11 @@ public class Sindico extends Usuario {
 
     public Sindico() {}
 
-    public String cadastrarUsuario(String nome, String email, String senha) {
-        return "Usuário cadastrado com sucesso: " + nome;
+    public float calcularConsumoTotal(List<Moradia> moradias) {
+        float total = 0;
+        for (Moradia m : moradias) {
+            total += m.getConsumoTotal();
+        }
+        return total;
     }
 }

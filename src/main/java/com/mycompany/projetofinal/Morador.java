@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Morador extends Usuario {
     private List<Alerta> alertas = new ArrayList<>();
+    private Moradia moradia;
 
     public Morador(String nome, String email, String senha) {
         super(nome, email, senha);
@@ -22,5 +23,13 @@ public class Morador extends Usuario {
 
     public void receberNotificacao(String mensagem) {
         System.out.println("[Alerta] " + mensagem);
+    }
+
+    public Moradia getMoradia() {
+        return moradia;
+    }
+
+    public void setMoradia(Moradia moradia) {
+        this.moradia = moradia;
     }
 }
