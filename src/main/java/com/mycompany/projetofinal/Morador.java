@@ -20,6 +20,10 @@ public class Morador extends Usuario {
         return alertas;
     }
 
+    public void setAlertas(List<Alerta> alertas) {
+        this.alertas = alertas;
+    }
+
     public Moradia getMoradia() {
         return moradia;
     }

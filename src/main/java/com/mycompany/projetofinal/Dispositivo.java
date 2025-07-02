@@ -77,6 +77,14 @@ public class Dispositivo {
         return historicoConsumo.get(historicoConsumo.size() - 1);
     }
 
+    public void setHistoricoConsumo(List<Consumo> historicoConsumo) {
+        this.historicoConsumo = historicoConsumo;
+    }
+
+    public void setMediaHistoricoDeConsumo(float mediaHistoricoDeConsumo) {
+        this.mediaHistoricoDeConsumo = mediaHistoricoDeConsumo;
+    }
+
     //MÉTODOS
     public void registrarConsumo(Consumo consumo) {
         historicoConsumo.add(consumo);

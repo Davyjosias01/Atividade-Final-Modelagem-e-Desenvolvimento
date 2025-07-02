@@ -26,6 +26,14 @@ public class Usuario {
         return email;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }

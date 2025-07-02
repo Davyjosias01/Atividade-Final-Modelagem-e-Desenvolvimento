@@ -15,6 +15,13 @@ public class SistemaMonitoramento {
     //CONSTRUTORES
     public SistemaMonitoramento(){}
 
+    public SistemaMonitoramento(List<Morador> moradores, List<Dispositivo> dispositivos, List<Moradia> moradias, Scanner scanner) {
+        this.moradores = moradores;
+        this.dispositivos = dispositivos;
+        this.moradias = moradias;
+        this.scanner = scanner;
+    }
+
     //MÉTODOS
     public void registrarDispositivo() {
         System.out.print("ID: ");
@@ -224,6 +231,21 @@ public class SistemaMonitoramento {
     }
 
     // Getters
+    public void setMoradores(List<Morador> moradores) {
+        this.moradores = moradores;
+    }
+    public void setDispositivos(List<Dispositivo> dispositivos) {
+        this.dispositivos = dispositivos;
+    }
+    public void setMoradias(List<Moradia> moradias) {
+        this.moradias = moradias;
+    }
+    public Scanner getScanner() {
+        return scanner;
+    }
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
+    }
     public List<Dispositivo> getDispositivos() { return dispositivos; }
     public List<Morador> getMoradores() { return moradores; }
     public List<Moradia> getMoradias() { return moradias; }
