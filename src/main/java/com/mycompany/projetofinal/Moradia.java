@@ -58,6 +58,18 @@ public class Moradia {
         return dispositivos;
     }
 
+    public void setDispositivos(List<Dispositivo> dispositivos) {
+        this.dispositivos = dispositivos;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public void setMoradores(List<Morador> moradores) {
+        this.moradores = moradores;
+    }
+
     public void adicionaDispositivo(Dispositivo dispositivo) {
         dispositivo.setMoradia(this);
         dispositivos.add(dispositivo);
